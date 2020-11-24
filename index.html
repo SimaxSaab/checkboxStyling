@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Styling</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    /* Option */
+
+    .block-1 {
+      padding: 25px;
+    }
+
+    .option {
+        display: block;
+        margin-bottom: 0.5em;        
+    }
+
+    /* Check */
+
+    .check {
+        padding-left: 1.2em;
+    }
+
+    .check__input {
+        position: absolute;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .check__box {
+        position: absolute;
+        margin-left: -1.2em;
+        width: 1em;
+        height: 1em;
+        background-image: url(img/off.svg);
+    }
+
+    /* Checked */
+
+    .check__input:checked + .check__box {
+        background-image: url(img/on.svg);
+    }
+
+    /* Focused */
+
+    .check__input:focus + .check__box {
+        background-image: url(img/off-focused.svg);
+    }
+
+    .check__input:checked:focus + .check__box {
+        background-image: url(img/on-focused.svg);
+    }
+
+    /* Disabled */
+
+    .check__input:disabled + .check__box {
+        background-image: url(img/off-disabled.svg);
+    }
+
+    .check__input:checked:disabled + .check__box {
+        background-image: url(img/on-disabled.svg);
+    }
+  </style>
+</head>
+<body>
+  <h2>Чекбоксы картинками</h2>
+  <div class="block-1">
+    <label class="check option">
+      <input class="check__input" type="checkbox">
+      <span class="check__box"></span>
+      Первый
+    </label>
+    <label class="check option">
+        <input class="check__input" type="checkbox" checked>
+        <span class="check__box"></span>
+        Второй
+    </label>
+    <label class="check option">
+        <input class="check__input" type="checkbox" disabled>
+        <span class="check__box"></span>
+        Третий
+    </label>
+    <label class="check option">
+        <input class="check__input" type="checkbox" checked disabled>
+        <span class="check__box"></span>
+        Четвёртый
+    </label>
+    <details>
+      <summary>
+        CSS
+      </summary>
+      .block-1 {
+        padding: 25px;
+      }
+  
+      .option {
+          display: block;
+          margin-bottom: 0.5em;        
+      }
+  
+      /* Check */
+  
+      .check {
+          padding-left: 1.2em;
+      }
+  
+      .check__input {
+          position: absolute;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+      }
+  
+      .check__box {
+          position: absolute;
+          margin-left: -1.2em;
+          width: 1em;
+          height: 1em;
+          background-image: url(img/off.svg);
+      }
+  
+      /* Checked */
+  
+      .check__input:checked + .check__box {
+          background-image: url(img/on.svg);
+      }
+  
+      /* Focused */
+  
+      .check__input:focus + .check__box {
+          background-image: url(img/off-focused.svg);
+      }
+  
+      .check__input:checked:focus + .check__box {
+          background-image: url(img/on-focused.svg);
+      }
+  
+      /* Disabled */
+  
+      .check__input:disabled + .check__box {
+          background-image: url(img/off-disabled.svg);
+      }
+  
+      .check__input:checked:disabled + .check__box {
+          background-image: url(img/on-disabled.svg);
+      }
+    </details>
+  </div>
+</body>
+</html>
