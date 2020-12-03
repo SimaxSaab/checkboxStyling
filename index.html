@@ -11,7 +11,7 @@
       padding: 0;
       font-family: sans-serif;
     }
-
+/* Image */
     /* Option */
 
     .block-1 {
@@ -29,7 +29,7 @@
       padding-left: 1.2em;
     }
 
-    .check__input {
+    .check__input, .s-check__input {
       position: absolute;
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -79,14 +79,55 @@
     }
 
     .parag-inner {
-      text-indent: 10px;
+      text-indent: 20px;
     }
     .parag-innerX2 {
-      text-indent: 20px;
+      text-indent: 40px;
     }
 
     .parag-last {
       padding-bottom: 10px;
+    }
+
+/* Style */
+
+    .s-check__box {
+        position: absolute;
+        margin-top: 0.2em;
+        margin-left: -1em;
+        width: 0.6em;
+        height: 0.6em;
+        overflow: hidden;
+        border-radius: 0.15em;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        box-shadow: 0 0 0 0.1em #4A90E2;
+    }
+
+    /* Checked */
+
+    .s-check__input:checked + .s-check__box {
+        background-color: #4A90E2;
+        background-image: url(img/check.svg);
+    }
+
+    /* Focused */
+
+    .s-check__input:focus + .s-check__box {
+        box-shadow:
+            0 0 0 0.1em #4A90E2,
+            0 0 0 0.2em #7ED321;
+    }
+
+    /* Disabled */
+
+    .s-check__input:disabled + .s-check__box {
+        box-shadow: 0 0 0 0.1em #9B9B9B;
+    }
+
+    .s-check__input:checked:disabled + .s-check__box {
+        background-color: #9B9B9B;
     }
   </style>
 </head>
@@ -208,6 +249,130 @@
 
       .check__input:checked:disabled + .check__box {
       <p class="parag-inner">background-image: url(img/on-disabled.svg);</p>
+      <p class="parag-last">}</p>
+    </details>
+  </div>
+  <h2>Чекбоксы стилями</h2>
+  <div class="block-1">
+    <label class="check option">
+      <input class="s-check__input" type="checkbox">
+      <span class="s-check__box"></span>
+      Первый
+    </label>
+    <label class="check option">
+      <input class="s-check__input" type="checkbox" checked>
+      <span class="s-check__box"></span>
+      Второй
+    </label>
+    <label class="check option">
+      <input class="s-check__input" type="checkbox" disabled>
+      <span class="s-check__box"></span>
+      Третий
+    </label>
+    <label class="check option">
+      <input class="s-check__input" type="checkbox" checked disabled>
+      <span class="s-check__box"></span>
+      Четвёртый
+    </label>
+    <details>
+      <summary>
+        HTML
+      </summary>
+      <p class="parag-first">
+        &lt;div class="block-1"&gt;
+      </p>
+        <p class="parag-inner">&lt;label class="check option"&gt;</p>
+          <p class="parag-innerX2">&lt;input class="check__input" type="checkbox"&gt;</p>
+          <p class="parag-innerX2">&lt;span class="check__box"&gt;&lt;/span&gt;</p>
+          <p class="parag-innerX2">Первый</p>
+        <p class="parag-inner">&lt;/label&gt;</p>
+        <p class="parag-inner">&lt;label class="check option"&gt;</p>
+          <p class="parag-innerX2">&lt;input class="check__input" type="checkbox" checked&gt;</p>
+          <p class="parag-innerX2">&lt;span class="check__box"&gt;&lt;/span&gt;</p>
+          <p class="parag-innerX2">Второй</p>
+        <p class="parag-inner">&lt;/label&gt;</p>
+        <p class="parag-inner">&lt;label class="check option"&gt;</p>
+          <p class="parag-innerX2">&lt;input class="check__input" type="checkbox" disabled&gt;</p>
+          <p class="parag-innerX2">&lt;span class="check__box"&gt;&lt;/span&gt;</p>
+          <p class="parag-innerX2">Третий</p>
+        <p class="parag-inner">&lt;/label&gt;</p>
+        <p class="parag-inner">&lt;label class="check option"&gt;</p>
+          <p class="parag-innerX2">&lt;input class="check__input" type="checkbox" checked disabled&gt;</p>
+          <p class="parag-innerX2">&lt;span class="check__box"&gt;&lt;/span&gt;</p>
+          <p class="parag-innerX2">Четвёртый</p>
+        <p class="parag-inner">&lt;/label&gt;</p>
+      &lt;/div&gt;
+    </details>
+
+    <details>
+      <summary>
+        CSS
+      </summary>
+      <p class="parag-first">
+        .block-1 {
+      </p>
+      <p class="parag-inner">
+        padding: 25px;
+      </p>
+      <p class="parag-last">
+        }
+      </p>
+
+      .option {
+      <p class="parag-inner">display: block;</p>
+      <p class="parag-inner">margin-bottom: 0.5em;</p>
+      <p class="parag-last">}</p>
+
+      <p class="parag-last">/* Check */</p>
+
+      .check {
+      <p class="parag-inner">padding-left: 1.2em;</p>
+      <p class="parag-last">}</p>
+
+      .check__input {
+      <p class="parag-inner">position: absolute;</p>
+      <p class="parag-inner">-webkit-appearance: none;</p>
+      <p class="parag-inner">-moz-appearance: none;</p>
+      <p class="parag-inner">appearance: none;</p>
+      <p class="parag-last">}</p>
+
+      .check__box {
+      <p class="parag-inner">position: absolute;</p>
+      <p class="parag-inner">margin-top: 0.2em;</p>
+      <p class="parag-inner">margin-left: -1em;</p>
+      <p class="parag-inner">width: 0.6em;</p>
+      <p class="parag-inner">height: 0.6em;</p>
+      <p class="parag-inner">overflow: hidden;</p>
+      <p class="parag-inner">border-radius: 0.15em;</p>
+      <p class="parag-inner">background-color: white;</p>
+      <p class="parag-inner">background-repeat: no-repeat;</p>
+      <p class="parag-inner">background-position: 50% 50%;</p>
+      <p class="parag-inner">box-shadow: 0 0 0 0.1em #4A90E2;</p>
+      <p class="parag-last">}</p>
+
+      <p class="parag-last">/* Checked */</p>
+
+      .check__input:checked + .check__box {
+      <p class="parag-inner">background-color: #4A90E2;</p>
+      <p class="parag-inner">background-image: url(img/check.svg);</p>
+      <p class="parag-last">}</p>
+
+      <p class="parag-last">/* Focused */</p>
+
+      .check__input:focus + .check__box {
+      <p class="parag-inner">box-shadow:</p>
+      <p class="parag-innerX2">0 0 0 0.1em #4A90E2,</p>
+      <p class="parag-innerX2">0 0 0 0.2em #7ED321;</p>
+      <p class="parag-last">}</p>
+
+      <p class="parag-last">/* Disabled */</p>
+
+      .check__input:disabled + .check__box {
+      <p class="parag-inner">box-shadow: 0 0 0 0.1em #9B9B9B;</p>
+      <p class="parag-last">}</p>
+
+      .check__input:checked:disabled + .check__box {
+      <p class="parag-inner">background-color: #9B9B9B;</p>
       <p class="parag-last">}</p>
     </details>
   </div>
